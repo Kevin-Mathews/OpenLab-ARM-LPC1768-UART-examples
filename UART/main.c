@@ -86,8 +86,8 @@ int main()
 
     Divisor_Latch_Val = (Clock_Frequency/(16 * BAUDRATE )); 
 		
-    DLLSB =  Divisor_Latch_Val & 0xFF;
-    DLMSB =  Divisor_Latch_Val - DLLSB;
+    DLLSB =  Divisor_Latch_Val & 0xFF;								//Lower 8 bits of the divisor
+    DLMSB =  (Divisor_Latch_Val>>8) & 0xFF;						//Higher 8 bits of the divisor
 
 		LINE_CR &= ~DLAB_LCR;  // Clear DLAB after setting DLL,DLM
 	
@@ -102,6 +102,7 @@ int main()
 
 		while(1)
 		{
+			//Here a data we enter serially gets read and transmitted back
 			ch = UART0_ReadChar(); 
 			UART0_WriteChar(ch);
 		}       

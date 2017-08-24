@@ -397,7 +397,7 @@ Image Symbol Table
     Region$$Table$$Base                      0x00000268   Number         0  anon$$obj.o(Region$$Table)
     Region$$Table$$Limit                     0x00000288   Number         0  anon$$obj.o(Region$$Table)
     SystemInit                               0x00000301   Thumb Code   518  system_lpc17xx.o(i.SystemInit)
-    main                                     0x00000521   Thumb Code   144  main.o(i.main)
+    main                                     0x00000521   Thumb Code   140  main.o(i.main)
     SystemFrequency                          0x10000000   Data           4  system_lpc17xx.o(.data)
     __libspace_start                         0x10000004   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x10000064   Data           0  libspace.o(.bss)
@@ -410,9 +410,9 @@ Memory Map of the image
 
   Image Entry point : 0x00000169
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x000005e4, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000005e0, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x000005e0, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x000005dc, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -482,7 +482,7 @@ Memory Map of the image
     0x00000288   0x00000074   PAD
     0x000002fc   0x00000004   Code   RO            4    .ARM.__at_0x02FC    startup_lpc17xx.o
     0x00000300   0x00000220   Code   RO           57    i.SystemInit        system_lpc17xx.o
-    0x00000520   0x000000c0   Code   RO           16    i.main              main.o
+    0x00000520   0x000000bc   Code   RO           16    i.main              main.o
 
 
     Execution Region ER_RW (Base: 0x10000000, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
@@ -509,12 +509,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       262         56          0          0          0       6566   main.o
+       258         56          0          0          0       6674   main.o
         64         26        204          0        512       1008   startup_lpc17xx.o
        544         26          0          4          0        803   system_lpc17xx.o
 
     ----------------------------------------------------------------------
-       872        108        352          4        512       8377   Object Totals
+       868        108        352          4        512       8485   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0        116          0          0          0   (incl. Padding)
 
@@ -563,15 +563,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1152        124        352          4        612       8697   Grand Totals
-      1152        124        352          4        612       8697   ELF Image Totals
-      1152        124        352          4          0          0   ROM Totals
+      1148        124        352          4        612       8805   Grand Totals
+      1148        124        352          4        612       8805   ELF Image Totals
+      1148        124        352          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1504 (   1.47kB)
+    Total RO  Size (Code + RO Data)                 1500 (   1.46kB)
     Total RW  Size (RW Data + ZI Data)               616 (   0.60kB)
-    Total ROM Size (Code + RO Data + RW Data)       1508 (   1.47kB)
+    Total ROM Size (Code + RO Data + RW Data)       1504 (   1.47kB)
 
 ==============================================================================
 
